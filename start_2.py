@@ -5,21 +5,10 @@ response = ollama.list()
 #print(response)
 
 # Chat example
-res = ollama.chat(
+res = ollama.generate(
     model= "llama3.2:latest",
-    messages=[
-        {"role": "user", "content": "Why is the ocean so salty?"}
-    ],
-    stream=True
+    prompt="Why is the sky blue?"
 )
 
-# print the response
-#print(res)
-
-# print only content
-#print(res["message"]["content"])
-
-# steaming print:
-for chunk in res:
-    print(chunk["message"]["content"], end="", flush=True)
+print(ollama.show("llama3.2:latest"))
 
