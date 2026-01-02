@@ -8,12 +8,18 @@ response = ollama.list()
 res = ollama.chat(
     model= "llama3.2:latest",
     messages=[
-        {"role": "user", "content": "Why is the sky blue?"}
-    ]
+        {"role": "user", "content": "Why is the ocean so salty?"}
+    ],
+    stream=True
 )
 
 # print the response
 #print(res)
 
 # print only content
-print(res["message"]["content"])
+#print(res["message"]["content"])
+
+# steaming print:
+for chunk in res:
+    print(chunk["message"]["content"], end="", flush=True)
+
