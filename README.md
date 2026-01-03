@@ -1,0 +1,2 @@
+### Python - install requirements
+- if we have to install a bunch of Python models, the can be listed in *** requirements.txt *** file and then installation can start by running the following command: *** pip install -r requirements.txt ***
